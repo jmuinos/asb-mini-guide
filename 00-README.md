@@ -1,6 +1,6 @@
 # asb-mini-guide
 
-Azure Service Bus introduction guide.
+Azure Service Bus introduction and migration guide.
 
 ## Índice
 
