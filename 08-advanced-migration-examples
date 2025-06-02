@@ -1,6 +1,6 @@
 # 🧪 Ejemplos avanzados de migración a Azure.Messaging.ServiceBus
 
-Este documento complementa ejemplos más avanzados de migración, abordando características como Dead Letter Queues (DLQ), Time-To-Live (TTL), sesiones, autenticación con Azure Identity, integración con ASP.NET Core y el uso de `ServiceBusProcessor`.
+Este documento complementa los ejemplos básicos de migración, incluyendo casos más avanzados como Dead Letter Queues (DLQ), TTL, sesiones, autenticación con Azure Identity y registro en ASP.NET Core.
 
 ---
 
