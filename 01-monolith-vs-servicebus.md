@@ -1,6 +1,6 @@
-# 🧱 Monolito vs Azure Service Bus
+# Monolito vs Azure Service Bus
 
-## 🎯 Escenario clásico
+## Escenario clásico
 
 Una aplicación de gestión de pedidos realiza múltiples acciones:
 
