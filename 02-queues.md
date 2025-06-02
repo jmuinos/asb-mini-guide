@@ -25,3 +25,7 @@ Una cola es una estructura FIFO (First In, First Out) donde los mensajes se entr
 - No permite que múltiples servicios reaccionen al mismo evento
 - No admite filtros
 - No es adecuada para sistemas de eventos donde varios subsistemas deben reaccionar a la vez
+
+---
+
+⬅️ [Anterior](./01-monolith-vs-servicebus.md) | 🧭 [Índice](./README.md) | ➡️ [Siguiente](./03-topics.md)
