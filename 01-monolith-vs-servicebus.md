@@ -39,3 +39,6 @@ Desacoplas las responsabilidades. El pedido se guarda y se publica un evento en 
             ▼                ▼               ▼
       EmailService     InventoryService    CRMService
 ```
+---
+
+🧭 [Índice](./README.md) | ➡️ [Siguiente](./02-queues.md)
