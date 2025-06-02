@@ -1,6 +1,6 @@
-# 📬 Azure Service Bus Topics vs Queues
+# Azure Service Bus Topics vs Queues
 
-## 🔄 Diferencia clave
+## Diferencia clave
 
 | Característica         | Queue                          | Topic + Subscriptions              |
 |------------------------|--------------------------------|------------------------------------|
@@ -13,7 +13,7 @@
 
 ---
 
-## 🧪 Ejemplo visual
+## Ejemplo visual
 
 ### Queue
 
