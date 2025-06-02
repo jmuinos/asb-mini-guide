@@ -1,6 +1,6 @@
-# 📦 Casos prácticos y patrones comunes
+# Casos prácticos y patrones comunes
 
-## 📌 1. Procesamiento de pedidos
+## 1. Procesamiento de pedidos
 
 - **Productor:** OrderService
 - **Consumidores:** EmailService, InventoryService, CRMService
@@ -16,7 +16,7 @@
 
 ---
 
-## 📌 2. Facturación por lote
+## 2. Facturación por lote
 
 - **Productor:** API / WebApp
 - **Consumidor:** BillingService
@@ -28,7 +28,7 @@
 
 ---
 
-## 📌 3. Auditoría de eventos críticos
+## 3. Auditoría de eventos críticos
 
 - **Productor:** Cualquier microservicio
 - **Consumidor:** AuditService
@@ -46,7 +46,7 @@
 
 ---
 
-## 📌 4. Notificaciones masivas
+## 4. Notificaciones masivas
 
 - **Productor:** NotificationService
 - **Consumidor:** Worker de envío de notificaciones
@@ -62,7 +62,7 @@
 
 ---
 
-## 🧠 Reglas generales de decisión
+## Reglas generales de decisión
 
 | Necesidad                                 | Tipo recomendado |
 |------------------------------------------|------------------|
