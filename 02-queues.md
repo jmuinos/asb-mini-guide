@@ -1,10 +1,10 @@
-# 🟫 Azure Service Bus Queues (Colas)
+# Azure Service Bus Queues (Colas)
 
-## 🧠 ¿Qué es una Queue?
+## ¿Qué es una Queue?
 
 Una cola es una estructura FIFO (First In, First Out) donde los mensajes se entregan a **un solo consumidor**.
 
-## 📦 Ejemplo
+## Ejemplo
 
 ```text
 [ OrderService ] ---> [ Queue: order-processing ]
