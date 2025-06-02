@@ -32,3 +32,8 @@ Se recomienda migrar cuanto antes a:
 - Centralizar el uso de `ServiceBusClient`
 - Usar `ServiceBusProcessor` para Topics y Subscripciones
 - Implementar `ProcessMessageAsync` y `ProcessErrorAsync`
+
+---
+
+⬅️ [Anterior](./05-use-cases.md) | 🧭 [Índice](./README.md) | ➡️ [Siguiente](./07-migration-code-examples.md)
+
