@@ -1,10 +1,10 @@
-# 🧪 Ejemplos avanzados de migración a Azure.Messaging.ServiceBus
+# Ejemplos avanzados de migración a Azure.Messaging.ServiceBus
 
 Este documento complementa los ejemplos básicos de migración, incluyendo casos más avanzados como Dead Letter Queues (DLQ), TTL, sesiones, autenticación con Azure Identity y registro en ASP.NET Core.
 
 ---
 
-## 🧾 Dead Letter Queue (DLQ)
+## Dead Letter Queue (DLQ)
 
 ### Antes (Microsoft.Azure.ServiceBus)
 
@@ -27,7 +27,7 @@ var message = await receiver.ReceiveMessageAsync();
 
 ---
 
-## ⏳ Time-To-Live (TTL)
+## Time-To-Live (TTL)
 
 ### Antes
 
@@ -51,7 +51,7 @@ await sender.SendMessageAsync(message);
 
 ---
 
-## 🔐 Sesiones
+## Sesiones
 
 ### Antes
 
@@ -69,7 +69,7 @@ var sessionReceiver = await client.AcceptSessionAsync(queueName, sessionId);
 
 ---
 
-## 🧾 Autenticación con Azure Identity
+## Autenticación con Azure Identity
 
 ```csharp
 var client = new ServiceBusClient("namespace.servicebus.windows.net", new DefaultAzureCredential());
@@ -77,7 +77,7 @@ var client = new ServiceBusClient("namespace.servicebus.windows.net", new Defaul
 
 ---
 
-## 🧩 Integración con ASP.NET Core
+## Integración con ASP.NET Core
 
 ```csharp
 services.AddAzureClients(builder =>
@@ -88,7 +88,7 @@ services.AddAzureClients(builder =>
 
 ---
 
-## 🔄 Uso de ServiceBusProcessor
+## Uso de ServiceBusProcessor
 
 ```csharp
 var processor = client.CreateProcessor(queueName, new ServiceBusProcessorOptions());
@@ -114,7 +114,7 @@ Task ErrorHandler(ProcessErrorEventArgs args)
 
 ---
 
-## 📚 Recursos adicionales
+## 📚Recursos adicionales
 
 - [Documentación oficial de Azure.Messaging.ServiceBus](https://learn.microsoft.com/dotnet/api/overview/azure/messaging.servicebus-readme)
 - [Guía de migración de WindowsAzure.ServiceBus a Azure.Messaging.ServiceBus](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/servicebus/Azure.Messaging.ServiceBus/MigrationGuide_WindowsAzureServiceBus.md)
