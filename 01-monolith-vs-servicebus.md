@@ -28,7 +28,7 @@ public void PlaceOrder(Order order)
 
 ---
 
-## ✅ Enfoque moderno con Azure Service Bus
+## ✅ Enfoque con Azure Service Bus
 
 Desacoplas las responsabilidades. El pedido se guarda y se publica un evento en el bus. Cada servicio se suscribe y responde a ese evento.
 
