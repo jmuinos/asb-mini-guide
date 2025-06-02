@@ -1,6 +1,6 @@
-# Azure Service Bus Topics vs Queues
+# Queues vs Topics en Azure Service Bus
 
-## Diferencia clave
+## Diferencia principal
 
 | Característica         | Queue                          | Topic + Subscriptions              |
 |------------------------|--------------------------------|------------------------------------|
@@ -8,7 +8,7 @@
 | Nº de consumidores     | Solo uno                       | Múltiples                          |
 | Uso típico             | Tareas individuales            | Publicación de eventos             |
 | Filtros por mensaje    | ❌ No                          | ✅ Sí                              |
-| Escalabilidad          | ✅                              | ✅ Por suscripción                 |
+| Escalabilidad          | ✅ Escalable                   | ✅ Escalable individualmente       |
 | Complejidad            | 🔹 Baja                        | 🔸 Media                           |
 
 ---
@@ -24,10 +24,6 @@
                   [ EmailService ]
 ```
 
-Solo un servicio puede procesar el mensaje.
-
----
-
 ### Topic + Subscriptions
 
 ```text
@@ -38,11 +34,14 @@ Solo un servicio puede procesar el mensaje.
 [ EmailService ]   [ InventoryService ]   [ CRMService ]
 ```
 
-Cada servicio recibe su **propia copia** del mensaje y lo procesa de forma independiente.
-
 ---
 
-## ✅ Cuándo usar cada uno
+## ✅ Reglas generales de decisión
 
-- Usa **Queue** cuando **solo un servicio** necesita procesar cada mensaje.
-- Usa **Topic** cuando **varios servicios** necesitan reaccionar al mismo evento (ej. arquitectura orientada a eventos).
+| Necesidad                                 | Tipo recomendado |
+|------------------------------------------|------------------|
+| Un consumidor por mensaje                | Queue            |
+| Varios consumidores por mensaje          | Topic            |
+| Procesamiento paralelo de tareas         | Queue            |
+| Publicación de eventos (event-driven)    | Topic            |
+| Filtro de mensajes por tipo o contenido  | Topic (con filtro) |
