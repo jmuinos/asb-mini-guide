@@ -1,4 +1,4 @@
-# asb-mini-guide
+# azure-service-bus-mini-guide
 
 Azure Service Bus introduction guide.
 
