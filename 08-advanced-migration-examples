@@ -1,0 +1,124 @@
+# 🧪 Ejemplos avanzados de migración a Azure.Messaging.ServiceBus
+
+Este documento complementa ejemplos más avanzados de migración, abordando características como Dead Letter Queues (DLQ), Time-To-Live (TTL), sesiones, autenticación con Azure Identity, integración con ASP.NET Core y el uso de `ServiceBusProcessor`.
+
+---
+
+## 🧾 Dead Letter Queue (DLQ)
+
+### Antes (Microsoft.Azure.ServiceBus)
+
+```csharp
+var deadLetterPath = EntityNameHelper.FormatDeadLetterPath(queueName);
+var receiver = new MessageReceiver(connectionString, deadLetterPath, ReceiveMode.PeekLock);
+var message = await receiver.ReceiveAsync();
+```
+
+### Después (Azure.Messaging.ServiceBus)
+
+```csharp
+var client = new ServiceBusClient(connectionString);
+var receiver = client.CreateReceiver(queueName, new ServiceBusReceiverOptions
+{
+    SubQueue = SubQueue.DeadLetter
+});
+var message = await receiver.ReceiveMessageAsync();
+```
+
+---
+
+## ⏳ Time-To-Live (TTL)
+
+### Antes
+
+```csharp
+var message = new Message(Encoding.UTF8.GetBytes("Hello"))
+{
+    TimeToLive = TimeSpan.FromMinutes(5)
+};
+await queueClient.SendAsync(message);
+```
+
+### Después
+
+```csharp
+var message = new ServiceBusMessage("Hello")
+{
+    TimeToLive = TimeSpan.FromMinutes(5)
+};
+await sender.SendMessageAsync(message);
+```
+
+---
+
+## 🔐 Sesiones
+
+### Antes
+
+```csharp
+var sessionClient = new SessionClient(connectionString, queueName);
+var sessionReceiver = await sessionClient.AcceptMessageSessionAsync(sessionId);
+```
+
+### Después
+
+```csharp
+var client = new ServiceBusClient(connectionString);
+var sessionReceiver = await client.AcceptSessionAsync(queueName, sessionId);
+```
+
+---
+
+## 🧾 Autenticación con Azure Identity
+
+```csharp
+var client = new ServiceBusClient("namespace.servicebus.windows.net", new DefaultAzureCredential());
+```
+
+---
+
+## 🧩 Integración con ASP.NET Core
+
+```csharp
+services.AddAzureClients(builder =>
+{
+    builder.AddServiceBusClient("connection-string");
+});
+```
+
+---
+
+## 🔄 Uso de ServiceBusProcessor
+
+```csharp
+var processor = client.CreateProcessor(queueName, new ServiceBusProcessorOptions());
+
+processor.ProcessMessageAsync += MessageHandler;
+processor.ProcessErrorAsync += ErrorHandler;
+
+await processor.StartProcessingAsync();
+
+async Task MessageHandler(ProcessMessageEventArgs args)
+{
+    var body = args.Message.Body.ToString();
+    Console.WriteLine($"Received: {body}");
+    await args.CompleteMessageAsync(args.Message);
+}
+
+Task ErrorHandler(ProcessErrorEventArgs args)
+{
+    Console.WriteLine(args.Exception.ToString());
+    return Task.CompletedTask;
+}
+```
+
+---
+
+## 📚 Recursos adicionales
+
+- [Documentación oficial de Azure.Messaging.ServiceBus](https://learn.microsoft.com/dotnet/api/overview/azure/messaging.servicebus-readme)
+- [Guía de migración de WindowsAzure.ServiceBus a Azure.Messaging.ServiceBus](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/servicebus/Azure.Messaging.ServiceBus/MigrationGuide_WindowsAzureServiceBus.md)
+
+---
+
+⬅️ [Anterior](./07-migration-code-examples.md) | 🧭 [Índice](./README.md)
