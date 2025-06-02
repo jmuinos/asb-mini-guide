@@ -45,3 +45,8 @@
 | Procesamiento paralelo de tareas         | Queue            |
 | Publicación de eventos (event-driven)    | Topic            |
 | Filtro de mensajes por tipo o contenido  | Topic (con filtro) |
+
+---
+
+⬅️ [Anterior](./03-topics.md) | 🧭 [Índice](./README.md) | ➡️ [Siguiente](./05-use-cases.md)
+
