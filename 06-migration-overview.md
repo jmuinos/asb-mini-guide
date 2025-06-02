@@ -1,4 +1,4 @@
-# Migración a Azure.Messaging.ServiceBus (7.x)
+# Guía de Migración a Azure.Messaging.ServiceBus (7.x)
 
 ## Contexto
 
@@ -32,6 +32,7 @@ Se recomienda migrar cuanto antes a:
 - Centralizar el uso de `ServiceBusClient`
 - Usar `ServiceBusProcessor` para Topics y Subscripciones
 - Implementar `ProcessMessageAsync` y `ProcessErrorAsync`
+
 
 ---
 
