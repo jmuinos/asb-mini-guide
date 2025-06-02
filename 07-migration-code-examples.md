@@ -61,3 +61,8 @@ await processor.StopProcessingAsync();
 await processor.DisposeAsync();
 await client.DisposeAsync();
 ```
+
+---
+
+⬅️ [Anterior](./06-migration-overview.md) | 🧭 [Índice](./README.md)
+
