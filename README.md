@@ -27,3 +27,14 @@ Azure Service Bus introduction guide.
 
 8. [Guía de migración - Ejemplos avanzados](./08-advanced-migration-examples.md)  
    Casos más avanzados como DLQ, TTL, sesiones, Azure Identity e integración con ASP.NET.
+
+   ---
+
+## 📚 Referencias
+
+Esta guía está basada en la documentación oficial del SDK de Azure para .NET:
+
+- [Azure.Messaging.ServiceBus - Documentación oficial](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/messaging.servicebus-readme)
+- [Guía de migración desde `Microsoft.Azure.ServiceBus`](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/servicebus/Azure.Messaging.ServiceBus/MigrationGuide_WindowsAzureServiceBus.md)
+- [Ejemplos de uso en GitHub (samples)](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
+
