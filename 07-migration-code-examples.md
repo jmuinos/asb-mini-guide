@@ -1,5 +1,8 @@
 # Ejemplos prácticos de migración a Azure.Messaging.ServiceBus
 
+Este documento muestra ejemplos básicos para migrar código del SDK antiguo de Azure Service Bus al nuevo paquete `Azure.Messaging.ServiceBus`. Incluye envíos y recepciones con queues y topics, y el uso de `ServiceBusProcessor`.
+
+
 ## Enviar mensaje a un **Topic**
 
 ### Antes (Microsoft.Azure.ServiceBus)
@@ -64,5 +67,6 @@ await client.DisposeAsync();
 
 ---
 
-⬅️ [Anterior](./06-migration-overview.md) | 🧭 [Índice](./README.md)
+⬅️ [Anterior](./06-migration-overview.md) | 🧭 [Índice](./README.md) | ➡️ [Siguiente](./08-advanced-migration-examples.md)
+
 
