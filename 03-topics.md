@@ -50,3 +50,8 @@ Usa Topics cuando:
 - Necesitas aplicar lógica de filtrado por consumidor.
 - Quieres desacoplamiento total entre productor y consumidores.
 - Estás diseñando una arquitectura basada en eventos (event-driven).
+
+---
+
+⬅️ [Anterior](./02-queues.md) | 🧭 [Índice](./README.md) | ➡️ [Siguiente](./04-queues-vs-topics.md)
+
